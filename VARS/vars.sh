@@ -5,5 +5,4 @@ export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaaejlswyiy2uhqgvrsh
 export TF_VAR_api_fingerprint="77:36:b2:3b:6e:3b:45:0e:fa:e7:9c:ea:3d:0e:50:f0"
 export TF_VAR_region="eu-frankfurt-1"
 export TF_VAR_demozone="Malaga"
-export TF_VAR_api_private_key_path="../KEYS/wedo.ppk"
-
+export TF_VAR_api_private_key_path="./KEYS/wedo.ppk"

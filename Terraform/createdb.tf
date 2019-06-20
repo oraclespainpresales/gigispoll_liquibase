@@ -53,6 +53,21 @@ data "oci_identity_availability_domains" "ADs" {
    data_storage_size_in_gb = "512"
    license_model = "BRING_YOUR_OWN_LICENSE"
    node_count = "1"
+   
+   provisioner "file" {
+    source      = "clonepdbs.sh"
+    destination = "/home/opc/clonepdbs.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+	  "sudo cp /home/opc/clonepdbs.sh /home/oracle",
+	  "sudo chown oracle:oinstall /home/oracle/clonepdbs.sh",
+      "sudo chmod +x /home/oracle/clonepdbs.sh",
+	  "sudo su - oracle",
+      "/home/oracle/clonepdbs.sh ${var.demozone}",
+    ]
+  }
  }
 
  
