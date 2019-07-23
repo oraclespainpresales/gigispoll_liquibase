@@ -8,7 +8,7 @@ export TF_VAR_api_private_key_path="./KEYS/wedosinkey.pem"
 export TF_VAR_region="eu-frankfurt-1"
 
 ### Compartment
-export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaatz2chvjiz4d3xdrtzmtxspkul4augrxbv6lb6br3e2xv7aerh3ia"
+export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaaejlswyiy2uhqgvrshqzivduye5vlo24i2j6t4qjtb4v5h3p5k6ba"
 
 #DemoZone
 #export TF_VAR_demozone="SanFrancisco"
