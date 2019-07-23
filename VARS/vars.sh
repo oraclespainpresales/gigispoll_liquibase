@@ -11,4 +11,4 @@ export TF_VAR_region="eu-frankfurt-1"
 export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaatz2chvjiz4d3xdrtzmtxspkul4augrxbv6lb6br3e2xv7aerh3ia"
 
 #DemoZone
-export TF_VAR_demozone="SanFrancisco"
+#export TF_VAR_demozone="SanFrancisco"
