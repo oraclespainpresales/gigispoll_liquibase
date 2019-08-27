@@ -45,4 +45,22 @@ resource "oci_database_db_system" "DBGIGISPIZZA" {
    license_model = "BRING_YOUR_OWN_LICENSE"
    node_count = "1"
 
+	 provisioner "file" {
+		source      = "ClonePDBs.sh"
+		destination = "/home/opc/ClonePDBs.sh"
+	 }
+	 
+	 provisioner "file" {
+		source      = "ClonePDBs.sql"
+		destination = "/home/opc/ClonePDBs.sql"
+	 }
+
+	provisioner "remote-exec" {
+		inline = [
+		"chmod +x /home/opc/ClonePDBs.sh",
+		"/home/opc/ClonePDBs.sh ${var.demozone}",
+		]
+	}
+
  }
+}
