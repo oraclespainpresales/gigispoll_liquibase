@@ -45,22 +45,54 @@ resource "oci_database_db_system" "DBGIGISPIZZA" {
    license_model = "BRING_YOUR_OWN_LICENSE"
    node_count = "1"
 
-	 provisioner "file" {
-		source      = "ClonePDBs.sh"
-		destination = "/home/opc/ClonePDBs.sh"
-	 }
-	 
-	 provisioner "file" {
-		source      = "ClonePDBs.sql"
-		destination = "/home/opc/ClonePDBs.sql"
-	 }
-
-	provisioner "remote-exec" {
-		inline = [
-		"chmod +x /home/opc/ClonePDBs.sh",
-		"/home/opc/ClonePDBs.sh ${var.demozone}",
-		]
-	}
-
  }
+
+# Get DB node list
+data "oci_database_db_nodes" "db_nodes" {
+  compartment_id = "${var.compartment_ocid}"
+  db_system_id   = "${oci_database_db_system.DBGIGISPIZZA.id}"
+}
+
+# Get DB node details
+data "oci_database_db_node" "db_node_details" {
+  db_node_id = "${lookup(data.oci_database_db_nodes.db_nodes.db_nodes[0], "id")}"
+}
+
+# Gets the OCID of the first (default) vNIC
+data "oci_core_vnic" "db_node_vnic" {
+    vnic_id = "${data.oci_database_db_node.db_node_details.vnic_id}"
+}
+
+
+
+resource "null_resource" "remote-exec" {
+      connection {
+      agent       = false
+      timeout     = "30m"
+      host        = "${data.oci_core_vnic.db_node_vnic.public_ip_address}"
+      user        = "opc"
+      private_key = "${file("${var.api_private_key_path}")}"
+    }
+
+    provisioner "file" {
+                source      = "ClonePDBs.sh"
+                destination = "/home/opc/ClonePDBs.sh"
+         }
+
+         provisioner "file" {
+                source      = "ClonePDBs.sql"
+                destination = "/home/opc/ClonePDBs.sql"
+         }
+
+        provisioner "remote-exec" {
+                inline = [
+                "chmod +x /home/opc/ClonePDBs.sh",
+                "/home/opc/ClonePDBs.sh clon",
+                ]
+        }
+
+  }
+
+output "db_node_public_ip" {
+    value = ["${data.oci_core_vnic.db_node_vnic.public_ip_address}"]
 }
