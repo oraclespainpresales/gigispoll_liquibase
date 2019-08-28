@@ -93,7 +93,7 @@ resource "null_resource" "remote-exec" {
         provisioner "remote-exec" {
                 inline = [
                 "chmod +x /home/opc/ClonePDBs.sh",
-                "/home/opc/ClonePDBs.sh "${var.demozone}"",
+                "/home/opc/ClonePDBs.sh ${var.demozone}",
                 ]
         }
 
