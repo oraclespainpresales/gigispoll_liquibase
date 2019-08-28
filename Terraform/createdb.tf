@@ -83,7 +83,13 @@ resource "null_resource" "remote-exec" {
                 source      = "Terraform/ClonePDBs.sql"
                 destination = "/home/opc/ClonePDBs.sql"
          }
+         
+         provisioner "file" {
+                source      = "Terraform/execDB.sh"
+                destination = "/home/opc/execDB.sh"
+         }
 
+        
         provisioner "remote-exec" {
                 inline = [
                 "chmod +x /home/opc/ClonePDBs.sh",
