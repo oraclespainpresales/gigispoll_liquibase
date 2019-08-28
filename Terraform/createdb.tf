@@ -32,7 +32,7 @@ resource "oci_database_db_system" "DBGIGISPIZZA" {
        "admin_password" = "Welcome1#Oc4j1013-"
        "db_name" = "DB${var.demozone}"
      }
-     db_version = "18.6.0.0"
+     db_version = "19.0.0.0"
      display_name = "DODBHP"
    }
    disk_redundancy = "NORMAL"
