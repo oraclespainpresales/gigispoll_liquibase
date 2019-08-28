@@ -75,12 +75,12 @@ resource "null_resource" "remote-exec" {
     }
 
     provisioner "file" {
-                source      = "ClonePDBs.sh"
+                source      = "Terraform/ClonePDBs.sh"
                 destination = "/home/opc/ClonePDBs.sh"
          }
 
          provisioner "file" {
-                source      = "ClonePDBs.sql"
+                source      = "Terraform/ClonePDBs.sql"
                 destination = "/home/opc/ClonePDBs.sql"
          }
 
