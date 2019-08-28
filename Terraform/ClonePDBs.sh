@@ -12,7 +12,7 @@ export ORACLE_HOST=hostdb$LOWERHOST
 
 env | grep ORACLE
 
-sudo cp ClonePDBs.sql /home/oracle 
+sudo cp ClonePDBs.sql /home/oracle
 sudo chown oracle:oinstall /home/oracle/ClonePDBs.sql
 sudo su -m -l oracle -c "sqlplus -S / as sysdba @ClonePDBs.sql"
 
