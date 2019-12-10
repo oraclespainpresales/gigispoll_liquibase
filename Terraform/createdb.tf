@@ -26,7 +26,7 @@ resource "oci_database_db_system" "DBGIGISPIZZA" {
    availability_domain = "${data.oci_identity_availability_domains.ADs.availability_domains.0.name}"
    compartment_id = "${var.compartment_ocid}"
    cpu_core_count = "2"
-   database_edition = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+   database_edition = "ENTERPRISE_EDITION"
    db_home {
      database {
        "admin_password" = "Welcome1#Oc4j1013-"
