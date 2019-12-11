@@ -14,7 +14,7 @@ administer key management backup keystore identified by "Welcome1#Oc4j1013-";
 
 alter session set container=dodbhp_pdb1;
 
-create public database link clone_link_sql connect to system identified by "Welcome1#Oc4j1013-" using '(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 130.61.124.136)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = dodbhp_pdb1.sub03010825490.devopsvcn.oraclevcn.com)))';
+create public database link clone_link_sql connect to system identified by "Welcome1#Oc4j1013-" using '(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 158.101.175.134)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = dodbhp_pdb1.sub03010825490.devopsvcn.oraclevcn.com)))';
 
 select * from dual @ clone_link_sql;
 
@@ -54,7 +54,7 @@ administer key management backup keystore identified by "Welcome1#Oc4j1013-";
 
 alter session set container=pdbjson;
 
-create public database link clone_link_json connect to system identified by "Welcome1#Oc4j1013-" using '(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 130.61.124.136)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = pdbjson.sub03010825490.devopsvcn.oraclevcn.com)))';
+create public database link clone_link_json connect to system identified by "Welcome1#Oc4j1013-" using '(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 158.101.175.134)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = pdbjson.sub03010825490.devopsvcn.oraclevcn.com)))';
 
 select * from dual @ clone_link_json;
 
