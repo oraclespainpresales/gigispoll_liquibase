@@ -1,5 +1,5 @@
 -- script_01.sql
-administer key management set keystore open identified by "Welcome1#Oc4j1013-"
+administer key management set keystore open identified by "Welcome1#Oc4j1013-";
 CREATE TABLE tab1 (
   id          NUMBER,
   description VARCHAR2(50),
