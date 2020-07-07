@@ -11,14 +11,6 @@
                path="script.sql"
                relativeToChangelogFile="true"
                splitStatements="false"
-               stripComments="false"/>
-      <rollback>
-        <sqlFile dbms="oracle"
-               endDelimiter=";"
-               path="script_02_rollback.sql"
-               relativeToChangelogFile="true"
-               splitStatements="true"
-               stripComments="false"/>  
-      </rollback>            
+               stripComments="false"/>           
     </changeSet>
 </databaseChangeLog>
