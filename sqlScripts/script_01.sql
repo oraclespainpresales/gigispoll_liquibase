@@ -1,5 +1,4 @@
 -- script_01.sql
-administer key management set key identified by "Welcome1#Oc4j1013-" with backup;
 CREATE TABLE tab1 (
   id          NUMBER,
   description VARCHAR2(50),
