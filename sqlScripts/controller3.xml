@@ -8,17 +8,9 @@
     <changeSet author="mm" id="01">
        <sqlFile dbms="oracle"
                endDelimiter=";"
-               path="script_02.sql"
-               relativeToChangelogFile="true"
-               splitStatements="false"
-               stripComments="false"/>
-      <rollback>
-        <sqlFile dbms="oracle"
-               endDelimiter=";"
-               path="script_02_rollback.sql"
+               path="script.sql"
                relativeToChangelogFile="true"
                splitStatements="true"
-               stripComments="false"/>  
-      </rollback>            
+               stripComments="false"/>          
     </changeSet>
 </databaseChangeLog>
