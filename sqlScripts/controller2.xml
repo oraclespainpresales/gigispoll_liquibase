@@ -10,7 +10,7 @@
                endDelimiter=";"
                path="script_02.sql"
                relativeToChangelogFile="true"
-               splitStatements="true"
+               splitStatements="false"
                stripComments="false"/>
       <rollback>
         <sqlFile dbms="oracle"
