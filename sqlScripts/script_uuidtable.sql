@@ -1,8 +1,9 @@
 --------------------------------------------------------
 --  DDL for Table POLLUUID
 --------------------------------------------------------
+DROP TABLE "MICROSERVICE"."POLLUUID";
 
-CREATE TABLE "MICROSERVICE"."POLLUUID2" ( 
+CREATE TABLE "MICROSERVICE"."POLLUUID" ( 
     "UUID" VARCHAR2(40 BYTE) NOT NULL, 
     "ORDERID" VARCHAR2(20 BYTE) NOT NULL, 
     "DUEDATETIME" VARCHAR2(30 BYTE) NOT NULL, 
