@@ -2,9 +2,10 @@
 --  DDL for Table POLLUUID
 --------------------------------------------------------
 BEGIN
-    DROP TABLE "MICROSERVICE"."POLLUUID";
+    execute immediate 'DROP TABLE "MICROSERVICE"."POLLUUID" PURGE';
     
-    WHEN OTHERS THEN NULL;
+    EXCEPTION    
+        WHEN OTHERS THEN NULL;
 END;
 
 CREATE TABLE "MICROSERVICE"."POLLUUID" ( 
