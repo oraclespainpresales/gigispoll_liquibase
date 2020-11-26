@@ -7,14 +7,14 @@
 
     <changeSet author="isp" id="01">
        <sqlFile dbms="oracle"
-               endDelimiter=";"
+               endDelimiter="#"
                path="script_uuidtable.sql"
                relativeToChangelogFile="true"
                splitStatements="true"
                stripComments="false"/>
       <rollback>
         <sqlFile dbms="oracle"
-               endDelimiter=";"
+               endDelimiter="#"
                path="script_uuidtable_rollback.sql"
                relativeToChangelogFile="true"
                splitStatements="true"
