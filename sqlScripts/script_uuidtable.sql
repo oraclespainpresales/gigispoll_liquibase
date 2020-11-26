@@ -1,7 +1,11 @@
 --------------------------------------------------------
 --  DDL for Table POLLUUID
 --------------------------------------------------------
-DROP TABLE "MICROSERVICE"."POLLUUID";
+BEGIN
+    DROP TABLE "MICROSERVICE"."POLLUUID";
+    
+    WHEN OTHERS THEN NULL;
+END;
 
 CREATE TABLE "MICROSERVICE"."POLLUUID" ( 
     "UUID" VARCHAR2(40 BYTE) NOT NULL, 
