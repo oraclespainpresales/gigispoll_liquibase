@@ -2,7 +2,7 @@
 --  DDL for Table POLLUUID
 --------------------------------------------------------
 BEGIN
-    execute immediate 'DROP TABLE "MICROSERVICE"."POLLUUID" PURGE';
+    execute immediate 'DROP TABLE MICROSERVICE.POLLUUID PURGE';
     
     EXCEPTION    
         WHEN OTHERS THEN NULL;
