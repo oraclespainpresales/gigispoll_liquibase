@@ -3,7 +3,7 @@
 --------------------------------------------------------
 BEGIN
     BEGIN
-        execute immediate 'drop table MICROSERVICE.POLLUUID;';
+        execute immediate 'drop table MICROSERVICE.POLLUUID'; COMMIT;
         EXCEPTION WHEN OTHERS THEN NULL;
     END;
     
