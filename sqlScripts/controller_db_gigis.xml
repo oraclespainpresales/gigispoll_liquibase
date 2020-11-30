@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet author="isp" id="01">
+    <changeSet author="Carlos" id="1">
        <sqlFile dbms="oracle"
                endDelimiter="#"
                path="script_uuidtable.sql"
@@ -16,6 +16,22 @@
         <sqlFile dbms="oracle"
                endDelimiter="#"
                path="script_uuidtable_rollback.sql"
+               relativeToChangelogFile="true"
+               splitStatements="true"
+               stripComments="false"/>  
+      </rollback>            
+    </changeSet>
+    <changeSet author="Ivan" id="2">
+       <sqlFile dbms="oracle"
+               endDelimiter="#"
+               path="script_tablepayment_survey.sql"
+               relativeToChangelogFile="true"
+               splitStatements="true"
+               stripComments="false"/>
+      <rollback>
+        <sqlFile dbms="oracle"
+               endDelimiter="#"
+               path="script_tablepayment_survey_rollback.sql"
                relativeToChangelogFile="true"
                splitStatements="true"
                stripComments="false"/>  

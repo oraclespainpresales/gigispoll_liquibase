@@ -14,15 +14,5 @@ BEGIN
         USED VARCHAR2(1 BYTE) DEFAULT ''N''
     )';
     
-    BEGIN
-        execute immediate 'ALTER TABLE MICROSERVICE.PAYMENTS 
-        ADD ( 
-            SERVICESURVEY NUMBER DEFAULT 0,
-            SERVICESCOMMENTS VARCHAR2(2000 BYTE)
-        )';
-        
-        EXCEPTION WHEN OTHERS THEN NULL;
-    END;
-    
     COMMIT;
 END;
